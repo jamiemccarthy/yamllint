@@ -13,3 +13,7 @@ Metrics/CyclomaticComplexity:
 
 Metrics/MethodLength:
   Max: 26
+
+Security/YAMLLoad:
+  Exclude:
+    - lib/yamllint/linter.rb

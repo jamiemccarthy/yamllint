@@ -102,9 +102,9 @@ module YamlLint
 
     # Check that the data is valid YAML
     def check_syntax_valid?(yaml_data, errors_array)
-      YAML.safe_load(yaml_data)
+      YAML.load(yaml_data)
       true
-    rescue YAML::SyntaxError => e
+    rescue YAML::SyntaxError, Psych::Exception => e
       errors_array << e.message
       false
     end
